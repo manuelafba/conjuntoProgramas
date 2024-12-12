@@ -1,14 +1,14 @@
 package questao3;
 
-import java.util.Scanner;
+import java.util.Scanner; // Importando a classe Scanner
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        boolean continuar = true;
+        Scanner scanner = new Scanner(System.in); // Criação de um objeto Scanner para ler as entradas do usuário
+        boolean continuar = true; // Variável para controlar a execução do loop principal
 
-        while (continuar) {
-            // Menu Principal
+        while (continuar) { // Loop que continua enquanto a variável "continuar" for verdadeira
+            // Menu principal com opções para o usuário escolher qual tipo de conversão deseja realizar
             System.out.println("Escolha o tipo de conversão:");
             System.out.println("1. Temperatura");
             System.out.println("2. Comprimento");
@@ -16,38 +16,38 @@ public class Main {
             System.out.println("4. Moeda");
             System.out.println("5. Sair");
 
-            int opcaoPrincipal = scanner.nextInt();
+            int opcaoPrincipal = scanner.nextInt();  // Lê a opção escolhida pelo usuário representada por um inteiro
 
-            switch (opcaoPrincipal) {
+            switch (opcaoPrincipal) { // Switch case para processar a opção escolhida
                 case 1:
-                    menuTemperatura(scanner);
+                    menuTemperatura(scanner); // Chama o menu de conversão de temperatura
                     break;
                 case 2:
-                    menuComprimento(scanner);
+                    menuComprimento(scanner); // Chama o menu de conversão de comprimento
                     break;
                 case 3:
-                    menuMassa(scanner);
+                    menuMassa(scanner); // Chama o menu de conversão de massa
                     break;
                 case 4:
-                    menuMoedas(scanner);
+                    menuMoedas(scanner); // Chama o menu de conversão de moedas
                     break;
                 case 5:
-                    continuar = false;
+                    continuar = false; // Troca o valor da variável "continuar" caso o usuário decida não fazer nenhuma operação e encerra o programa
                     System.out.println("Programa encerrado.");
                     break;
                 default:
-                    System.out.println("Opção inválida.");
+                    System.out.println("Opção inválida."); // Mensagem exibida caso uma opção inválida seja digitada
             }
         }
 
-        scanner.close();
+        scanner.close(); // Fecha o scanner após o fim da execução
     }
 
-    // Conversão de Temperatura
+    // Menu de conversão de temperatura
     public static void menuTemperatura(Scanner scanner) {
-        boolean continuarTemperatura = true;
-        while (continuarTemperatura) {
-            System.out.println("Escolha a conversão de temperatura desejada: ");
+        boolean continuarTemperatura = true; // Variável para controlar o loop de conversões de temperatura
+        while (continuarTemperatura) { // Loop que continua enquanto a variável "continuarTemperatura" for verdadeira
+            System.out.println("Escolha a conversão de temperatura desejada: "); // Menu com opções de conversão de temperatura
             System.out.println("1. Celsius para Fahrenheit");
             System.out.println("2. Celsius para Kelvin");
             System.out.println("3. Fahrenheit para Celsius");
@@ -55,13 +55,14 @@ public class Main {
             System.out.println("5. Kelvin para Celsius");
             System.out.println("6. Kelvin para Fahrenheit");
 
-            int opcao = scanner.nextInt();
+            int opcao = scanner.nextInt(); // Lê a opção de conversão 
             System.out.print("Digite o valor da temperatura: ");
-            double valorTemperatura = scanner.nextDouble();
+            double valorTemperatura = scanner.nextDouble(); // Lê o valor da temperatura
 
-            switch (opcao) {
+            switch (opcao) { // Switch case para realizar a conversão de acordo com a opção escolhida
+            	// Chamada de métodos da classe ConversorTemperatura passando a temperatura digitada como parâmetro
                 case 1:
-                    ConversorTemperatura.celsiusFahrenheit(valorTemperatura);
+                    ConversorTemperatura.celsiusFahrenheit(valorTemperatura); 
                     break;
                 case 2:
                     ConversorTemperatura.celsiusKelvin(valorTemperatura);
@@ -79,24 +80,24 @@ public class Main {
                     ConversorTemperatura.kelvinFahrenheit(valorTemperatura);
                     break;
                 default:
-                    System.out.println("Opção inválida.");
+                    System.out.println("Opção inválida."); // Mensagem exibida caso uma opção inválida seja escolhida
             }
 
-            System.out.println("Deseja fazer outra conversão?");
+            System.out.println("Deseja fazer outra conversão?");  // Pergunta se o usuário deseja realizar outra conversão
             System.out.println("1. Sim");
             System.out.println("2. Não");
-            int resposta = scanner.nextInt();
+            int resposta = scanner.nextInt(); // Lê a resposta
             if (resposta == 2) {
-                continuarTemperatura = false;
+                continuarTemperatura = false; // Se a resposta for 2, encerra o loop
             }
         }
     }
 
-    // Conversão de Comprimento
-    public static void menuComprimento(Scanner scanner) {
-        boolean continuarComprimento = true;
-        while (continuarComprimento) {
-            System.out.println("Escolha a conversão de comprimento desejada: ");
+    // Menu de conversão de comprimento
+    public static void menuComprimento(Scanner scanner) { 
+        boolean continuarComprimento = true; // Variável para controlar o loop de conversões de comprimento
+        while (continuarComprimento) { // Loop que continua enquanto a variável "continuarComprimento" for verdadeira
+            System.out.println("Escolha a conversão de comprimento desejada: "); // Menu com opções de conversão de comprimento
             System.out.println("1. Metros para Centímetros");
             System.out.println("2. Metros para Milímetros");
             System.out.println("3. Metros para Polegadas");
@@ -118,11 +119,12 @@ public class Main {
             System.out.println("19. Pés para Milímetros");
             System.out.println("20. Pés para Polegadas");
 
-            int opcao = scanner.nextInt();
+            int opcao = scanner.nextInt(); // Lê a opção de conversão 
             System.out.print("Digite o valor do comprimento: ");
-            double valorComprimento = scanner.nextDouble();
+            double valorComprimento = scanner.nextDouble(); // Lê o valor do comprimento
 
-            switch (opcao) {
+            switch (opcao) { // Switch case para realizar a conversão de acordo com a opção escolhida
+            // Chamada de métodos da classe ConversorComprimento passando o comprimento digitado como parâmetro
                 case 1:
                     ConversorComprimento.metrosCentimetros(valorComprimento);
                     break;
@@ -184,24 +186,24 @@ public class Main {
                     ConversorComprimento.pesPolegadas(valorComprimento);
                     break;
                 default:
-                    System.out.println("Opção inválida.");
+                    System.out.println("Opção inválida."); // Mensagem exibida caso uma opção inválida seja escolhida
             }
 
-            System.out.println("Deseja fazer outra conversão?");
+            System.out.println("Deseja fazer outra conversão?"); // Pergunta se o usuário deseja realizar outra conversão
             System.out.println("1. Sim");
             System.out.println("2. Não");
-            int resposta = scanner.nextInt();
+            int resposta = scanner.nextInt(); // Lê a resposta
             if (resposta == 2) {
-                continuarComprimento = false;
+                continuarComprimento = false;  // Se a resposta for 2, encerra o loop
             }
         }
     }
 
-    // Conversão de Massa
+    // Menu de conversão de massa
     public static void menuMassa(Scanner scanner) {
-        boolean continuarMassa = true;
-        while (continuarMassa) {
-            System.out.println("Escolha a conversão de massa desejada: ");
+        boolean continuarMassa = true; // Variável para controlar o loop de conversões de massa
+        while (continuarMassa) { // Loop que continua enquanto a variável "continuarMassa" for verdadeira
+            System.out.println("Escolha a conversão de massa desejada: "); // Menu com opções de conversão de massa
             System.out.println("1. Quilogramas para Gramas");
             System.out.println("2. Quilogramas para Libras");
             System.out.println("3. Gramas para Quilogramas");
@@ -209,11 +211,12 @@ public class Main {
             System.out.println("5. Libras para Quilogramas");
             System.out.println("6. Libras para Gramas");
 
-            int opcao = scanner.nextInt();
+            int opcao = scanner.nextInt(); // Lê a opção escolhida
             System.out.print("Digite o valor da massa: ");
-            double valorMassa = scanner.nextDouble();
+            double valorMassa = scanner.nextDouble(); // Lê o valor da massa
 
-            switch (opcao) {
+            switch (opcao) { // Switch case para realizar a conversão de acordo com a opção escolhida
+            // Chamada de métodos da classe ConversorMassa passando a massa digitada como parâmetro
                 case 1:
                     ConversorMassa.quilosGramas(valorMassa);
                     break;
@@ -233,23 +236,24 @@ public class Main {
                     ConversorMassa.librasGramas(valorMassa);
                     break;
                 default:
-                    System.out.println("Opção inválida.");
+                    System.out.println("Opção inválida."); // Mensagem exibida caso uma opção inválida seja escolhida
             }
 
-            System.out.println("Deseja fazer outra conversão?");
+            System.out.println("Deseja fazer outra conversão?"); // Pergunta se o usuário deseja realizar outra conversão
             System.out.println("1. Sim");
             System.out.println("2. Não");
-            int resposta = scanner.nextInt();
+            int resposta = scanner.nextInt(); // Lê a resposta
             if (resposta == 2) {
-                continuarMassa = false;
+                continuarMassa = false; // Se a resposta for 2, encerra o loop
             }
         }
     }
 
-    public static void menuMoedas(Scanner scanner) {
-        boolean continuarMoedas = true;
-        while (continuarMoedas) {
-            System.out.println("Escolha a conversão de moedas desejada: ");
+    // Menu de conversão de moedas
+    public static void menuMoedas(Scanner scanner) { 
+        boolean continuarMoedas = true; // Variável para controlar o loop de conversões de moedas
+        while (continuarMoedas) { // Loop que continua enquanto a variável "continuarMoedas" for verdadeira
+            System.out.println("Escolha a conversão de moedas desejada: "); // Menu com opções de conversão de moedas
             System.out.println("1. Real para Dólar");
             System.out.println("2. Real para Euro");
             System.out.println("3. Real para Libra");
@@ -263,12 +267,12 @@ public class Main {
             System.out.println("11. Libra para Dólar");
             System.out.println("12. Libra para Euro");
 
-            int opcao = scanner.nextInt();
+            int opcao = scanner.nextInt(); // Lê a opção escolhida
             System.out.print("Digite o valor da moeda: ");
-            double valorMoeda = scanner.nextDouble();
+            double valorMoeda = scanner.nextDouble(); // Lê o valor da moeda
 
-            // Conversões de moedas
-            switch (opcao) {
+            switch (opcao) { // Switch case para realizar a conversão de acordo com a opção escolhida
+            // Chamada de métodos da classe ConversorMoedas passando a moeda digitada como parâmetro
             case 1: 
                 ConversorMoedas.realDolar(valorMoeda);
                 break;
@@ -306,16 +310,16 @@ public class Main {
                 ConversorMoedas.libraEuro(valorMoeda);
                 break;
             default:
-                System.out.println("Opção inválida.");
+                System.out.println("Opção inválida."); // Mensagem exibida caso uma opção inválida seja escolhida
                 break;
         }
 
-            System.out.println("Deseja fazer outra conversão?");
+            System.out.println("Deseja fazer outra conversão?"); // Pergunta se o usuário deseja realizar outra conversão
             System.out.println("1. Sim");
             System.out.println("2. Não");
-            int resposta = scanner.nextInt();
+            int resposta = scanner.nextInt(); // Lê a resposta
             if (resposta == 2) {
-                continuarMoedas = false;
+                continuarMoedas = false; // Se a resposta for 2, encerra o loop
             }
         }
     }
