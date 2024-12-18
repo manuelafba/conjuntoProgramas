@@ -1,1 +1,1 @@
-# O código está dentrodo diretório src/geral
+# O código está dentro do diretório src/geral
