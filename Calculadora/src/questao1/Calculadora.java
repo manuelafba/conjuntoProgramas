@@ -98,7 +98,7 @@ public class Calculadora{
     public double raizGrauN(double base, double n){
         // Raíz é uma exponenciação com expoente em forma de fração
         double grau = 1 / n; 
-        return Math.pow(base, grau);
+        return this.exponenciacao(base, grau);
     }
 
     public boolean isNumeroPrimo(int numero){
