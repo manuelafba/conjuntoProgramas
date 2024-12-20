@@ -21,30 +21,13 @@ public class CPF {
 			/** Após o tratamento, é chamado o método "checagemFormato",
 			 * passando a string tratada como argumento 
 			**/
-			checagemFormato(cpfTratado);
+			somaDigitos(cpfTratado);
 			
 		// Tratamento de erro caso o formato do cpf seja inválido
 		} else {
 		    System.out.println(" ");
 			System.out.println("O CPF informado não atende ao formato correto");
 			System.out.println("Por favor, insira o CPF utilizando o formato: xxx.xxx.xxx-xx");
-		}
-	}
-	
-	// Método utilizado para tratar casos específicos de CPFs com formatos inválidos
-	public static void checagemFormato(String cpf) {
-	    // Caso o CPF fornecido seja compatível com os formatos abaixo:
-		if(cpf.equals("00000000000") || cpf.equals("11111111111") || cpf.equals("22222222222") || 
-			cpf.equals("33333333333") || cpf.equals("44444444444") || cpf.equals("55555555555") || 
-			cpf.equals("66666666666") || cpf.equals("77777777777") || cpf.equals("88888888888") || 
-			cpf.equals("99999999999") || cpf.equals("01234567890")) {
-			// Saídas informando erro no formato
-			System.out.println(" ");
-			System.out.println("CPF inválido");
-			System.out.println("Formato incorreto");
-		} else {
-		    // Caso o formato do CPF seja válido, é chamado o método "somaDigitos"
-			somaDigitos(cpf);
 		}
 	}
 	
